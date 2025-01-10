@@ -24,4 +24,9 @@ const dbConnectionString = process.env.DB_CONN_STRING;
 
   export const db = new pg.Pool({
      connectionString: dbConnectionString
-   })
+   });
+
+app.get("/form_entries", async (req, res) => {
+     const query = await db.query(`SELECT * FROM form_entries`);
+     await res.json(query.rows);
+});
