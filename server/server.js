@@ -22,6 +22,6 @@ app.get("/", (req, res) => {
 
 const dbConnectionString = process.env.DB_CONN_STRING;
 
-   const db = new pg.Pool({
+  export const db = new pg.Pool({
      connectionString: dbConnectionString
    })
