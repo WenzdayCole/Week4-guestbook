@@ -30,3 +30,10 @@ app.get("/form_entries", async (req, res) => {
      const query = await db.query(`SELECT * FROM form_entries`);
      await res.json(query.rows);
 });
+
+app.post("/new-data", async (req, res) => {
+     const data = req.body.formValues;
+     const query = await db.query(
+       `INSERT INTO table_name (name, content) VALUES ($1, $2,)`,
+       [name, content]);
+     await res.json(query.rows)});
