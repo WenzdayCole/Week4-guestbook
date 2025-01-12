@@ -7,7 +7,7 @@ function handleSubmitForm(event) {
     const formData = new FormData(form);
     const formValues = Object.fromEntries(formData);
 
-     fetch("http://localhost:8080/form_entries", {
+     fetch("https://week4-guestbook-v2jp.onrender.com", {
         method: "POST",
         header: {
             "Content-Type": "application/json",
@@ -16,7 +16,7 @@ function handleSubmitForm(event) {
     });
     console.log(formValues);
 
-    fetch("http://localhost:8080/form_entries", {
+    fetch("https://week4-guestbook-v2jp.onrender.com", {
         method: "GET",
         header: {
             "Content-Type": "application/json",
